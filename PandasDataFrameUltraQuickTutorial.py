@@ -60,3 +60,31 @@ names_dataframe["Janet"] = names_dataframe["Tahani"]+names_dataframe["Jason"]
 #
 print("Added column Janet = Tahani + Jason:")
 print(names_dataframe,'\n')
+# # Copying a DataFrame
+#
+# Create a reference by assigning my dataframe to a new variable.
+print("Experiment with reference:")
+reference_to_df = names_dataframe
+#
+# Print tje starting value of a particular cell.
+print(" Starting value of dataframe: %d" % names_dataframe['Jason'][1])
+print("  Starting value of reference_to_df: %d\n" % reference_to_df['Jason'][1])
+#
+# Modify a cell in df.
+names_dataframe.at[1,'Jason'] = names_dataframe['Jason'][1] + 5
+print("  Updated dataframe: %d" % names_dataframe['Jason'][1])
+print("  Updated reference_to_df: %d\n\n" % reference_to_df['Jason'][1])
+#
+# Create a true copy of names_dataframe
+print("Experiment with a true copy.")
+copy_names_dataframe = names_dataframe
+#
+# Print the starting value of a particular cell.
+print("  Starting value of my_dataframe: %d" % names_dataframe['Jason'][1])
+print("  Starting value of copy_of_my_dataframe: %d\n" % copy_names_dataframe['Jason'][1])
+#
+# Modify a cell in df.
+names_dataframe.at[1,'Jason'] = names_dataframe['Jason'][1] + 5
+print("  Updated my_dataframe: %d" % names_dataframe['Jason'][1])
+print("  copy_of_my_dataframe does not get updated: %d" % copy_names_dataframe['Jason'][1])
+# Verify output in last example last example
