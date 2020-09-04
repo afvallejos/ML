@@ -37,5 +37,26 @@ print(my_dataframe['temperature'])
 # Task 1: Create a DataFrame
 # Create a 3x4 pandas DataFrame in which thee columns are named Eleanor, Chidi, Tahani, and Jason.
 # Populate each of the cells in the DataFrame with a random integer between 0 and 100, inclusive.
+#
+names_columns = ['Eleanor', 'Chidi','Tahani','Jason']
+#
+names_data = np.random.randint(low=0, high=101,size=(3,4))
+#
+names_dataframe = pd.DataFrame(data=names_data , columns = names_columns,)
+#
 # Output the following: - The entire DataFrame
+#
+print(names_dataframe)
+#
 #                       - The value of the cell of row #1 of the Eleanor column 
+#
+print("Row #1 in Eleanor is:")
+#
+print(names_dataframe['Eleanor'].iloc[1],'\n')
+#
+# Create a fifth column named Janet, which is populated with the row-by-row sums of Tahani and Jason.
+#
+names_dataframe["Janet"] = names_dataframe["Tahani"]+names_dataframe["Jason"]
+#
+print("Added column Janet = Tahani + Jason:")
+print(names_dataframe,'\n')
